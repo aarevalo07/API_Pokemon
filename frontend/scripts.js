@@ -12,7 +12,6 @@ document.getElementById("buscar").addEventListener("click", function () {
 });
 
 async function agregarPokemon() {
-    console.log("entra");
     const nombre = document.getElementById("nombre").value.trim().toLowerCase();
 
     const id = document.getElementById("id").value;
@@ -44,7 +43,50 @@ async function agregarPokemon() {
         },
         body: pokemonJSON,
     });
-    res.json({ message: 'Pokémon agregado correctamente', pokemon: nuevoPokemon });
+    res.json({ message: 'Pokémon agregado correctamente' });
+}
+
+async function eliminarPokemon() {
+    const nombre = document.getElementById('entrada').value.trim().toLowerCase();
+
+    fetch(`http://localhost:3000/api/pokemon/delete/${nombre}`, {
+        method: "DELETE",
+        headers: {
+            'Content-Type': 'application/json',
+          },
+    });
+    res.send('pokemon borrado');
+}
+
+async function updatePokemon() {
+    const nombreViejo = document.getElementById("entrada").value.trim().toLowerCase();
+    const nombre = document.getElementById("nombre").value.trim().toLowerCase();
+
+    const id = document.getElementById("id").value;
+
+    const types = document
+        .getElementById("tipo1")
+        .value.split(",")
+        .map((tipo) => tipo.trim());
+
+    const sprite = document.getElementById("imagen").value;
+
+    const datosPokemon = {
+        id: parseInt(id),
+        name: nombre,
+        types: types,
+        sprite: sprite,
+    };
+
+    const pokemonJSON = JSON.stringify(datosPokemon);
+
+    fetch(`http://localhost:3000/api/pokemon/update/${nombreViejo}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: pokemonJSON,
+    });
 }
 
 // Función para buscar un Pokémon por nombre

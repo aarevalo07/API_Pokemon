@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const _ = require("underscore");
-const fs = require("fs")
+const fs = require("fs");
 
 const datosPokemon = require("../pokemon.json");
 
@@ -16,11 +16,17 @@ router.post("/pokemon/agregar", (req, res) => {
     if (id && name && types && sprite) {
         const nuevoPokemon = req.body;
 
-        leerJSON = JSON.parse(fs.readFileSync('backend/pokemon.json'));
+        leerJSON = JSON.parse(fs.readFileSync("backend/pokemon.json"));
         leerJSON.pokemon.push(nuevoPokemon);
-        fs.writeFileSync("backend/pokemon.json", JSON.stringify(leerJSON, null, 2));
+        fs.writeFileSync(
+            "backend/pokemon.json",
+            JSON.stringify(leerJSON, null, 2)
+        );
 
-        res.json({ message: 'Pokémon agregado correctamente', pokemon: nuevoPokemon });
+        res.json({
+            message: "Pokémon agregado correctamente",
+            pokemon: nuevoPokemon,
+        });
     } else {
         res.status(500).json({ error: "Datos incompletos" });
     }
@@ -28,13 +34,19 @@ router.post("/pokemon/agregar", (req, res) => {
 
 // Eliminar Pokemon
 router.delete("/pokemon/delete/:nombre", (req, res) => {
+    leerJSON = JSON.parse(fs.readFileSync("backend/pokemon.json"));
+
     const nombre = req.params.nombre.toLowerCase();
     const index = datosPokemon.pokemon.findIndex(
         (poke) => poke.name.toLowerCase() === nombre
     );
 
     if (index !== -1) {
-        datosPokemon.pokemon.splice(index, 1);
+        leerJSON.pokemon.splice(index, 1);
+        fs.writeFileSync(
+            "backend/pokemon.json",
+            JSON.stringify(leerJSON, null, 2)
+        );
         res.send(`Pokémon ${nombre} eliminado correctamente`);
     } else {
         res.status(404).json({ error: "No se encontró el pokemon" });
@@ -44,26 +56,22 @@ router.delete("/pokemon/delete/:nombre", (req, res) => {
 //Actualizar Pokemon
 router.put("/pokemon/update/:nombre", (req, res) => {
     const nombre = req.params.nombre.toLowerCase();
-    const { id, name, types, sprite } = req.body;
+    const pokemonActualizado = req.body;
+    leerJSON = JSON.parse(fs.readFileSync("backend/pokemon.json"));
 
-    if (id && name && types && sprite) {
-        const pokemon = datosPokemon.pokemon.find(
-            (poke) => poke.name.toLowerCase() === nombre
+    const pokemonIndex = leerJSON.pokemon.findIndex(
+        (poke) => poke.name.toLowerCase() === nombre
+    );
+
+    if (pokemonIndex !== -1) {
+        leerJSON.pokemon[pokemonIndex] = pokemonActualizado;
+        fs.writeFileSync(
+            "backend/pokemon.json",
+            JSON.stringify(leerJSON, null, 2)
         );
-
-        if (pokemon) {
-            pokemon.id = id;
-            pokemon.name = name;
-            pokemon.types = types;
-            pokemon.sprite = sprite;
-            res.json(datosPokemon);
-        } else {
-            res.status(404).json({ error: "No se encontró el pokemon" });
-        }
-
-
+        res.json(pokemonActualizado);
     } else {
-        res.status(500).json({ error: "Datos incompletos" });
+        res.status(404).json({ error: "No se encontró el pokemon" });
     }
 });
 
