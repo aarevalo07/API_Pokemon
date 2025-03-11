@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <script
+            src="https://kit.fontawesome.com/1203f5f99f.js"
+            crossorigin="anonymous"
+        ></script>
+        <title>PokeAPI</title>
+    </head>
+    <body>
+        <div class="botones_crud">
+            <a href="agregar.html">
+                <div class="agregar">AGREGAR</div>
+            </a>
+            <a href="modificar.html">
+                <div class="modificar">MODIFICAR</div>
+            </a>
+            <a href="eliminar.html">
+                <div class="eliminar">ELIMINAR</div>
+            </a>
+        </div>
+        <div>
+            <img class="logo" src="img/logo.png" alt="logo" />
+        </div>
+        <div class="barra_busqueda">
+            <input type="text" id="entrada" placeholder="Pikachu..." />
+            <button id="buscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+        <div class="nombre">
+            <p id="nombre_pokemon"></p>
+            <p id="id_pokemon"></p>
+        </div>
+        <div class="resultados">
+            <div class="imagen">
+                <img id="imagen_pokemon" src="img/silueta.png" alt="Imagen" />
+            </div>
+            <div id="tipos" class="tipos">
+                <div class="silueta"></div>
+                <div class="silueta"></div>
+            </div>
+        </div>
+        <script src="scripts.js"></script>
+    </body>
+</html>

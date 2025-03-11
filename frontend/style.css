@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    min-width: 400px;
+    width: 100%;
+    min-height: 500px;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f7f2ea;
+}
+
+.botones_crud {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.agregar, .modificar, .eliminar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px 0 5px;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.agregar:hover, .modificar:hover, .eliminar:hover {
+    background-color: #444;
+}
+
+a {
+    text-decoration: none;
+}
+
+.agregarPokemon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 50px;
+    background-color: #000;
+    border-radius: 10px;
+}
+
+.agregarPokemon p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.agregarPokemon input {
+    margin: 15px 0;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.agregarPokemon button {
+    position: relative;
+    background-color: #333;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.modificarPokemon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 50px;
+    background-color: #000;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.modificarPokemon p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.modificarPokemon input {
+    margin: 15px 0;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.botonModificar {
+    position: relative;
+    background-color: #333;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.cuadroEliminar {
+    display: flex;
+    flex-direction: column;
+}
+
+.botonEliminar {
+    position: relative;
+    background-color: #333;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 95%;
+}
+
+.barra_busqueda {
+    width: 25%;
+    margin-top: 50px;
+    position: relative;
+    min-width: 350px;
+    max-width: 500px;
+}
+
+input {
+    background-color: transparent;
+    width: 350px;
+    padding: 10px;
+    padding-right: 20%;
+    border: 0;
+    border-bottom: 2px solid #000;
+    outline: none;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #000;
+    position: absolute;
+    padding: 10px 15px;
+    border: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    color: #f7f2ea;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1f467d;
+}
+
+.resultados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    min-width: 350px;
+    margin-top: 5px;
+}
+
+.imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px 20px 20px;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.tipos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px 20px 20px;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.tipos div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    width: 80%;
+    height: 25%;
+    border-radius: 20px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.tipo-bug {
+    background: rgb(87,118,22);
+    background: linear-gradient(115deg, rgba(87,118,22,1) 0%, rgba(129,170,44,1) 100%);
+}
+
+.tipo-dark {
+    background: rgb(79,61,49);
+    background: linear-gradient(115deg, rgba(79,61,49,1) 0%, rgba(112,88,72,1) 100%);
+}
+
+.tipo-dragon {
+    background: rgb(76,66,151);
+    background: linear-gradient(115deg, rgba(76,66,151,1) 0%, rgba(110,93,239,1) 100%);
+}
+
+.tipo-electric{
+    background: rgb(165,134,40);
+    background: linear-gradient(115deg, rgba(165,134,40,1) 0%, rgba(216,174,45,1) 100%);
+}
+
+.tipo-fairy {
+    background: rgb(166,106,166);
+    background: linear-gradient(115deg, rgba(166,106,166,1) 0%, rgba(213,148,213,1) 100%);
+}
+
+.tipo-fighting {
+    background: rgb(146,75,63);
+    background: linear-gradient(115deg, rgba(146,75,63,1) 0%, rgba(209,78,55,1) 100%);
+}
+
+.tipo-fire {
+    background: rgb(200,106,45);
+    background: linear-gradient(115deg, rgba(200,106,45,1) 0%, rgba(255,149,72,1) 100%);
+}
+
+.tipo-flying {
+    background: rgb(98,114,149);
+    background: linear-gradient(115deg, rgba(98,114,149,1) 0%, rgba(124,149,201,1) 100%);
+}
+
+.tipo-ghost {
+    background: rgb(81,81,133);
+    background: linear-gradient(115deg, rgba(81,81,133,1) 0%, rgba(112,112,179,1) 100%);
+}
+
+.tipo-grass {
+    background: rgb(44,115,37);
+    background: linear-gradient(115deg, rgba(44,115,37,1) 0%, rgba(64,194,53,1) 100%);
+}
+
+.tipo-ground {
+    background: rgb(162,141,78);
+    background: linear-gradient(115deg, rgba(162,141,78,1) 0%, rgba(190,166,92,1) 100%);
+}
+
+.tipo-ice {
+    background: rgb(89,157,191);
+    background: linear-gradient(115deg, rgba(89,157,191,1) 0%, rgba(125,212,255,1) 100%);
+}
+
+.tipo-normal {
+    background: rgb(93,100,106);
+    background: linear-gradient(115deg, rgba(93,100,106,1) 0%, rgba(122,132,141,1) 100%);
+}
+
+.tipo-poison {
+    background: rgb(85,33,108);
+    background: linear-gradient(115deg, rgba(85,33,108,1) 0%, rgba(143,75,173,1) 100%);
+}
+
+.tipo-psychic {
+    background: rgb(190,80,124);
+    background: linear-gradient(115deg, rgba(190,80,124,1) 0%, rgba(255,96,159,1) 100%);
+}
+
+.tipo-rock {
+    background: rgb(124,117,90);
+    background: linear-gradient(115deg, rgba(124,117,90,1) 0%, rgba(181,170,122,1) 100%);
+}
+
+.tipo-steel {
+    background: rgb(130,130,147);
+    background: linear-gradient(115deg, rgba(130,130,147,1) 0%, rgba(159,159,174,1) 100%);
+}
+
+.tipo-water {
+    background: rgb(56,117,179);
+    background: linear-gradient(115deg, rgba(56,117,179,1) 0%, rgba(82,168,255,1) 100%);
+}
+
+.silueta {
+    background: rgb(45,45,45);
+    background: linear-gradient(115deg, rgba(45,45,45,1) 0%, rgba(94,94,94,1) 100%);
+}
+
+.nombre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 0 0;
+    width: 100px;
+    height: 100px;
+    font-weight: 900;
+    font-size: 2.5rem;
+}
+
+#id_pokemon {
+    color: #999999;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+img {
+    padding: 5px;
+    width: 250px;
+}
