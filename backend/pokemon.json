@@ -2097,30 +2097,6 @@
         "psychic"
       ],
       "sprite": "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/201.png"
-    },
-    {
-      "id": 11111,
-      "name": "daniel",
-      "types": [
-        "nose"
-      ],
-      "sprite": "no tengo"
-    },
-    {
-      "id": 23442,
-      "name": "wobufet",
-      "types": [
-        "dfsg"
-      ],
-      "sprite": "asd"
-    },
-    {
-      "id": 7777,
-      "name": "daniel laviera",
-      "types": [
-        "Humano"
-      ],
-      "sprite": "en mi ws"
     }
   ]
 }
