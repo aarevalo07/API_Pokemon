@@ -94,4 +94,21 @@ router.get("/pokemon/:nombre", (req, res) => {
     }
 });
 
+// Mostrar Pokemon especifico por id
+router.get("/pokemon/id/:id", (req, res) => {
+    const id = req.params.id;
+    const pokemon = datosPokemon.pokemon.find(
+        (poke) => poke.id == id
+    );
+    
+    console.log(pokemon);
+
+
+    if (pokemon) {
+        res.json(pokemon);
+    } else {
+        res.status(404).json({ error: "No se encontró el pokemon" });
+    }
+});
+
 module.exports = router;
