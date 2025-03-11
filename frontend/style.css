@@ -68,6 +68,7 @@ a {
 
 .agregarPokemon input {
     margin: 15px 0;
+    width: 500px;
     color: #fff;
     border-bottom: 2px solid #fff;
 }
