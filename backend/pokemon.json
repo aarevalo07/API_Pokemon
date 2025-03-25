@@ -54,15 +54,12 @@
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/5.png"
     },
     {
-      "id": 6,
-      "name": "charizard",
+      "id": null,
+      "name": "",
       "types": [
-        "fire",
-        "flying"
+        ""
       ],
-      "height": 17,
-      "weight": 905,
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/6.png"
+      "sprite": ""
     },
     {
       "id": 7,
@@ -254,14 +251,12 @@
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/24.png"
     },
     {
-      "id": 25,
-      "name": "pikachu",
+      "id": null,
+      "name": "",
       "types": [
-        "electric"
+        ""
       ],
-      "height": 4,
-      "weight": 60,
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/25.png"
+      "sprite": ""
     },
     {
       "id": 26,
