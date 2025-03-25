@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const DB_URL = 'mongodb://localhost:27017/pokemon'; // URL de la base de datos (Debe modificarse)
+const DB_URL = 'mongodb://localhost:27017/pokemondb'; // URL de la base de datos (Debe modificarse)
 
 module.exports = () => {
   
