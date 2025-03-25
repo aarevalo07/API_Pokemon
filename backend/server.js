@@ -1,4 +1,5 @@
 const express = require("express");
+const initDB = require("../config/db");
 const cors = require("cors");
 
 const app = express();
@@ -24,3 +25,5 @@ app.use("/api", require("./routes/index"));
 app.listen(app.get("port"), () => {
     console.log(`Server on PORT ${app.get("port")}`);
 });
+
+initDB()
